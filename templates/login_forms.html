@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        #main_div {
+            width: 40%;
+            height: 200px;
+            margin: auto;
+            border-radius: 25px;
+            align-items: center;
+            background-color: #bd3500;
+            box-shadow: 20px 20px 50px 20px grey;
+            position: relative;
+        }
+        #main_div form {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="main_div">
+        <form>
+            {% csrf_token %}
+            {{ my_form }}
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>translate</title>
+    <style>
+        #main {
+            width: 90%;
+            margin: auto;
+            margin-top: 50px;
+            height: 650px;
+            position: relative;
+            border: 10px solid #0045ff;
+            border-radius: 25px 10px;
+            box-shadow: 20px 20px 50px 15px grey;
+
+        }
+        #main table {
+            margin: auto;
+            width: 100%;
+            border-radius: 15px;
+            text-align: center;
+            height: 100%;
+        }
+        #main table thead {
+            font-size: 26px;
+            color: #97ff91;
+            text-transform: capitalize;
+        }
+        textarea {
+            width: 70%;
+            height: 400px;
+            border: 8px lightpink solid;
+            border-radius: 15px;
+            font-size: 18px;
+            font-family: "Leelawadee UI";
+            font-weight: bold;
+            box-shadow: 20px 20px 50px grey;
+            resize: none;
+        }
+        button {
+            width: 50px;
+            height: 50px;
+            margin-right: 50%;
+            margin-left: 50%;
+            border-radius: 15px;
+            background-color: #40f02b;
+        }
+        select {
+            margin-left: 10px;
+            border: lightpink solid 2px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <table>
+            <thead>
+                <tr>
+                    <th><td>farsi</td></th>
+                    <th><td>english</td></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <form method="post">
+                        <th><td>
+                                {% csrf_token %}
+                                <textarea name="text1" dir="rtl" {{ readonly }}>{{ text_t }}</textarea>
+                        </td></th>
+                        <th><td>
+                                {% csrf_token %}
+                                <textarea name="text2" {{ readonly }}>{{ text_t1 }}</textarea>
+                        </td></th>
+                        <select name="leagues">
+                            <option>English to Farsi</option>
+                            <option>Farsi to English</option>
+                        </select>
+                        <button formmethod="post" type="submit">ok</button>
+                   </form>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

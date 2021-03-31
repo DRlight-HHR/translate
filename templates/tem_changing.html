@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tem:</title>
+    <style>
+        h1 {
+            margin: auto;
+            background-color: dodgerblue;
+            color: lawngreen;
+            box-shadow: 20px 20px 50px 15px grey;
+            border-radius: 15px;
+            text-align: center;
+            text-transform: capitalize;
+            position: relative;
+        }
+        #main {
+            width: 60%;
+            height: 230px;
+            position: relative;
+            background-color: lightpink;
+            border-radius: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            box-shadow: 20px 20px 50px 20px grey;
+        }
+        #main h2 {
+            text-align: center;
+            font-family: "Leelawadee UI";
+            color: white;
+        }
+        #main select {
+            border-radius: 15px;
+            font-family: "Leelawadee UI";
+            margin-left: 30%;
+        }
+        #main input {
+            border-radius: 15px;
+            margin-left: 18%;
+            width: 60%;
+            margin-top: 25px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 >welcome to the changing temperature</h1>
+    <div id="main">
+        <h2>enter your temp:</h2>
+        <form method="post">
+            {% csrf_token %}
+            <select autofocus name="select">
+                <option name="C_F">Celsius to Fahrenheit</option>
+                <option name="F_C">Fahrenheit to Celsius</option>
+            </select>
+             {% csrf_token %}
+            <input type="number" placeholder="enter your number of changing" align="center" name="number">
+            <br>
+            <button type="submit" autofocus formmethod="post" style="margin-left: 45% ; margin-top: 25px">OK</button>
+            <h3 style="color: black ; font-size: 26px" align="center">{{ value }}</h3>
+        </form>
+    </div>
+</body>
+</html>
